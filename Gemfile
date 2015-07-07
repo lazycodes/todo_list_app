@@ -45,6 +45,8 @@ group :development, :test do
   gem 'coffee-rails', '~> 4.1.0'
 end
 
+gem 'foundation-rails'
+
 gem 'rubygems-update', '~> 2.4.5'
 
 gem 'bundler', '~> 1.10.5'
