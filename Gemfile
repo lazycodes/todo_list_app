@@ -43,12 +43,21 @@ group :development, :test do
 
   # Use CoffeeScript for .coffee assets and views
   gem 'coffee-rails', '~> 4.1.0'
+
+  gem 'rails_layout'
 end
 
+# Adding Authentication with Devise
+gem 'devise'
+
+# Zurb Foundation 5.3
 gem 'foundation-rails'
 
+# Required FSR
 gem 'rubygems-update', '~> 2.4.5'
 
+# Latest version
 gem 'bundler', '~> 1.10.5'
 
+# Required for Heroku deployment
 gem 'rails_12factor', group: :production
