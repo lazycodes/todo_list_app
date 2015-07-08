@@ -45,6 +45,12 @@ group :development, :test do
   gem 'coffee-rails', '~> 4.1.0'
 
   gem 'rails_layout'
+
+  gem 'rspec-rails', '~> 2.0'
+end
+
+group :test do
+	gem 'capybara', '~> 2.1.0'
 end
 
 # Adding Authentication with Devise
