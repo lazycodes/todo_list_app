@@ -17,7 +17,6 @@ describe "Creating todo lists", :js, :driver => :webkit do
 
 	it "redirects to the todo list index page on success" do
 		create_todo_list
-
 		expect(page).to have_content("Todo list was successfully created.")
 	end
 
