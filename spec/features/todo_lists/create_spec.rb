@@ -58,4 +58,46 @@ describe "Creating todo lists", :js, :driver => :webkit do
 
 	end	
 
+
+	it "displays an error when the todo list has no title", :js, :driver => :webkit do
+		expect(TodoList.count).to eq(0)
+
+
+		visit "/todo_lists"
+		click_link "New Todo list"
+		expect(page).to have_content("New Todo List")
+
+		fill_in "Title", with: "Capybara test title"
+		fill_in "Description", with: ""
+		click_button "Create Todo list"
+
+		expect(page).to have_content("Description can't be blank")
+		expect(TodoList.count).to eq(0)
+		#save_and_open_page
+		
+		visit "/todo_lists"
+		expect(page).to_not have_content("Capybara test description")
+
+	end	
+
+	it "displays an error when the todo list has a description less than five characters", :js, :driver => :webkit do
+		expect(TodoList.count).to eq(0)
+
+
+		visit "/todo_lists"
+		click_link "New Todo list"
+		expect(page).to have_content("New Todo List")
+
+		fill_in "Title", with: "Capybara test title"
+		fill_in "Description", with: "Four"
+		click_button "Create Todo list"
+
+		expect(page).to have_content("Description is too short")
+		expect(TodoList.count).to eq(0)
+		#save_and_open_page
+		
+		visit "/todo_lists"
+		expect(page).to_not have_content("Capybara test description")
+
+	end		
 end
