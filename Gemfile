@@ -54,6 +54,7 @@ group :test do
   gem 'capybara-webkit'
   gem 'launchy'
   gem 'database_cleaner'
+  gem 'rspec-activemodel-mocks'
 end
 
 
